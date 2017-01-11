@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+	<property name="proxool.pool_alias">proxoolPool</property><!--这个名字要和上面XML文件中的别名要对应啊  -->
+	<property name="proxool.xml">ProxoolConf.xml</property><!-- 这个你刚才上面建立的XML文件的名字 -->
+	<property name="connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</property>
+	<property name="hibernate.proxool.existing_pool">true</property>
+	<!-- 方言 -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<!-- HIBERNATE产生表结构 update create create-dorp-->
+	<!-- <property name="hbm2ddl.auto">update</property> -->
+	<!-- 其它参数设置 -->
+	<!-- 显示SQL -->
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	<mapping class="cm.dabong.key.en.Softdog" />
+	<mapping class="cm.dabong.key.en.User" />
+</session-factory>
+
+</hibernate-configuration>

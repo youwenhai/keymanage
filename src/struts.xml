@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="do"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="json" extends="json-default">
+		<action name="dogAction" class="cm.dabong.key.en.ac.DogAction">
+			<result type="json" name="index">
+				<param name="root">list</param>
+				<!-- 指定是否序列化空的属性 -->  
+				<param name="excludeNullProperties">true</param>
+			</result>
+			<result type="json" name="reg">
+				<param name="root">info</param>
+			</result>
+			<result type="json" name="del">
+				<param name="root">info</param>
+			</result>
+			<result type="json" name="phydel">
+				<param name="root">info</param>
+			</result>
+			<result type="json" name="appoint">
+				<param name="root">info</param>
+			</result>
+			<result type="json" name="puk">
+				<param name="root">info</param>
+			</result>
+			<result type="json" name="reset">
+				<param name="root">info</param>
+			</result>
+		</action>
+		<action name="userAction" class="cm.dabong.key.en.ac.UserAction">
+			<result type="json" name="show">
+				<param name="root">list</param>
+				<!-- 指定是否序列化空的属性 -->  
+				<param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+	</package>
+</struts>
+
